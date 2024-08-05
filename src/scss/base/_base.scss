@@ -1,0 +1,45 @@
+:root {
+  --color-dark-charcoal: #312e2c;
+  --color-dark-raspberry: #7a284e;
+  --color-brandy-red: #854632;
+  --color-wenge-brown: #5f564d;
+  --color-eggshell: #f3e5d7;
+  --color-white-coffee: #e3ddd7;
+  --color-snow: #fff7fb;
+  --color-pure-white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  min-height: 100dvh;
+}
+html {
+  box-sizing: border-box;
+  // This defines what 1rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+  cursor: auto; /* or pointer if you want to keep the default hand cursor */
+}
+
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/

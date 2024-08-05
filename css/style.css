@@ -1,0 +1,135 @@
+@charset "UTF-8";
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+:root {
+  --color-dark-charcoal: #312e2c;
+  --color-dark-raspberry: #7a284e;
+  --color-brandy-red: #854632;
+  --color-wenge-brown: #5f564d;
+  --color-eggshell: #f3e5d7;
+  --color-white-coffee: #e3ddd7;
+  --color-snow: #fff7fb;
+  --color-pure-white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+  cursor: auto; /* or pointer if you want to keep the default hand cursor */
+}
+
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+/** 
+
+	100 : Thin
+	•	200 : Extra Light (Ultra Light)
+	•	300 : Light
+	•	400 : Normal
+	•	500 : Medium
+	•	600 : Semi Bold (Demi Bold)
+	•	700 : Bold
+	•	800 : Extra Bold (Ultra Bold)
+	•	900 : Black (Heavy)
+
+  */
+body {
+  font-family: "Verdana", sans-serif;
+  background-color: #fafafa;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.centered-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered-div2 {
+  margin: 0 auto;
+  max-width: 50%;
+  text-align: center;
+}
+
+.centered-div3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.attribution {
+  margin: 1.6rem 0 6rem;
+  font-size: 1.1rem;
+  text-align: center;
+  color: var(--color-wenge-brown);
+}
+.attribution__credit {
+  font-weight: 800;
+  color: var(--color-dark-raspberry) !important;
+}
+
+/*# sourceMappingURL=style.css.map */
