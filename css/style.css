@@ -16,15 +16,27 @@ ORDER: Base + typography > general layout + grid > page layout > components
 
 1em = 16px
 */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 :root {
-  --color-dark-charcoal: #312e2c;
-  --color-dark-raspberry: #7a284e;
-  --color-brandy-red: #854632;
-  --color-wenge-brown: #5f564d;
-  --color-eggshell: #f3e5d7;
-  --color-white-coffee: #e3ddd7;
-  --color-snow: #fff7fb;
-  --color-pure-white: #ffffff;
+  --color-UntoldBlue: #0e1323;
+  --color-LightLavy: #bbc0ff;
+  --color-HeathersDupe: #1c204b;
+  --color-PureWhite: #ffffff;
+  --color-PurpleHeart: #5a1cbb;
+  --color-BlueMarguerite: #7078c9;
+  --color-JungleGreen: #29ba66;
+  --color-BostonBlue: #3f9cbb;
+  --color-Emerald: #4bcf82;
+  --color-PictonBlue: #55c2e6;
+  --color-RoyalBlue: #5747ea;
+  --color-PurpleHeart2: #7335d2;
+  --color-Alto: #d8d8d8;
+  --color-RedDamask: #d96c47;
+  --color-FireBush: #e6a532;
+  --color-FrenchRose: #f04667;
+  --color-CreamCan: #f1c75b;
+  --color-WildWatermelon: #ff5e7d;
+  --color-Salmon: #ff8b64;
 }
 
 * {
@@ -77,10 +89,22 @@ FONT SIZE SYSTEM (px)
 
   */
 body {
-  font-family: "Verdana", sans-serif;
-  background-color: #fafafa;
+  font-family: "Rubik", sans-serif;
+  background-color: var(--color-UntoldBlue);
+  color: var(--color-PureWhite);
   font-weight: 400;
   line-height: 1.4;
+  font-size: 1.5rem;
+}
+
+.ft-heading {
+  font-size: 5.6rem;
+  font-weight: 300;
+}
+
+.ft-body-med {
+  font-size: 1.8rem;
+  font-weight: 500;
 }
 
 .centered-div {
@@ -91,23 +115,22 @@ body {
   text-align: center;
 }
 
-.centered-div2 {
-  margin: 0 auto;
-  max-width: 50%;
-  text-align: center;
-}
-
-.centered-div3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-}
-
 .container {
   display: flex;
-  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.grid {
+  margin: 25.3rem 16.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 25.5rem);
+  grid-template-rows: 1fr 1fr;
+  gap: 3rem;
+}
+.grid__item1 {
+  grid-row: 1/-1;
 }
 
 .hidden {
@@ -121,6 +144,10 @@ body {
   border: 0;
 }
 
+.color-salmon {
+  background-color: var(--color-Salmon);
+}
+
 .attribution {
   margin: 1.6rem 0 6rem;
   font-size: 1.1rem;
@@ -130,6 +157,87 @@ body {
 .attribution__credit {
   font-weight: 800;
   color: var(--color-dark-raspberry) !important;
+}
+
+.dashboard__card {
+  background-color: var(--color-HeathersDupe);
+  overflow: hidden;
+  border-radius: 15px;
+}
+.dashboard__card__profil {
+  background-color: var(--color-RoyalBlue);
+  border-radius: 0 0 15px 15px;
+}
+.dashboard__card__profil__avatar {
+  margin: 3.7rem 14.5rem 4.3rem 3.2rem;
+}
+.dashboard__card__profil__intro {
+  color: var(--color-LightLavy);
+  margin-bottom: 0.3rem;
+  margin-left: 3.2rem;
+}
+.dashboard__card__profil__name {
+  font-size: 4rem;
+  font-weight: 300;
+  padding: 0 8.4rem 8rem 3.2rem;
+}
+.dashboard__card__calendar {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-HeathersDupe);
+  font-size: 1.8rem;
+  font-weight: 400;
+  padding: 2.6rem 15.5rem 3.2rem 3.2rem;
+  gap: 2.1rem;
+  border-radius: 0 0 15px 15px;
+}
+.dashboard__card__calendar__daily {
+  color: var(--color-BlueMarguerite);
+}
+.dashboard__card__calendar__monthly {
+  color: var(--color-BlueMarguerite);
+}
+.dashboard__miniCard {
+  overflow: hidden;
+  border-radius: 15px;
+}
+.dashboard__miniCard__logo {
+  padding-bottom: 7rem;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  border-radius: 15px 15px 0 0;
+}
+.dashboard__miniCard__logo__icon {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  width: 79px;
+  height: 79px;
+}
+.dashboard__miniCard__card {
+  position: relative;
+  top: -1.7rem;
+  width: 100%;
+  background-color: var(--color-HeathersDupe);
+  border-radius: 15px;
+}
+.dashboard__miniCard__card__title {
+  min-width: 25.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 19rem;
+  padding: 2.9rem 3.5rem 2.4rem 3rem;
+}
+.dashboard__miniCard__card__hours {
+  padding-left: 3rem;
+}
+.dashboard__miniCard__card__lastWeek {
+  color: var(--color-LightLavy);
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 0 3rem 4rem 3rem;
 }
 
 /*# sourceMappingURL=style.css.map */

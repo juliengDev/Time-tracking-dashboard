@@ -1,0 +1,86 @@
+.dashboard {
+  &__card {
+    background-color: var(--color-HeathersDupe);
+    overflow: hidden;
+    border-radius: 15px;
+    &__profil {
+      background-color: var(--color-RoyalBlue);
+      border-radius: 0 0 15px 15px;
+      &__avatar {
+        margin: 3.7rem 14.5rem 4.3rem 3.2rem;
+      }
+      &__intro {
+        color: var(--color-LightLavy);
+        margin-bottom: 0.3rem;
+        margin-left: 3.2rem;
+      }
+      &__name {
+        font-size: 4rem;
+        font-weight: 300;
+        padding: 0 8.4rem 8rem 3.2rem;
+      }
+    }
+
+    &__calendar {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--color-HeathersDupe);
+      font-size: 1.8rem;
+      font-weight: 400;
+      padding: 2.6rem 15.5rem 3.2rem 3.2rem;
+      gap: 2.1rem;
+      border-radius: 0 0 15px 15px;
+      &__daily {
+        color: var(--color-BlueMarguerite);
+      }
+
+      &__monthly {
+        color: var(--color-BlueMarguerite);
+      }
+    }
+  }
+  &__miniCard {
+    overflow: hidden;
+    border-radius: 15px;
+
+    &__logo {
+      padding-bottom: 7rem;
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+      border-radius: 15px 15px 0 0;
+      &__icon {
+        position: absolute;
+        top: -10px;
+        right: 10px;
+        width: 79px;
+        height: 79px;
+      }
+    }
+    &__card {
+      position: relative;
+      top: -1.7rem;
+      width: 100%;
+      background-color: var(--color-HeathersDupe);
+      border-radius: 15px;
+
+      &__title {
+        min-width: 25.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 19rem;
+        padding: 2.9rem 3.5rem 2.4rem 3rem;
+      }
+      &__hours {
+        padding-left: 3rem;
+      }
+      &__lastWeek {
+        color: var(--color-LightLavy);
+        font-size: 1.5rem;
+        font-weight: 400;
+        padding: 0 3rem 4rem 3rem;
+      }
+    }
+  }
+}
