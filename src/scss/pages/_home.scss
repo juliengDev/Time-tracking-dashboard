@@ -42,9 +42,10 @@
   &__miniCard {
     overflow: hidden;
     border-radius: 15px;
+    position: relative;
 
     &__logo {
-      padding-bottom: 7rem;
+      padding-bottom: 9rem;
       overflow: hidden;
       width: 100%;
       position: relative;
@@ -58,9 +59,8 @@
       }
     }
     &__card {
-      position: relative;
-      top: -1.7rem;
-      width: 100%;
+      position: absolute;
+      top: 5rem;
       background-color: var(--color-HeathersDupe);
       border-radius: 15px;
 
