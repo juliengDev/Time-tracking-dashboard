@@ -8,6 +8,8 @@
       border-radius: 0 0 15px 15px;
       &__avatar {
         margin: 3.7rem 14.5rem 4.3rem 3.2rem;
+        border: 3px solid var(--color-PureWhite);
+        border-radius: 50%;
       }
       &__intro {
         color: var(--color-LightLavy);
@@ -30,57 +32,136 @@
       padding: 2.6rem 15.5rem 3.2rem 3.2rem;
       gap: 2.1rem;
       border-radius: 0 0 15px 15px;
-      &__daily {
+      &__item {
+        transition: all 0.3s ease;
         color: var(--color-BlueMarguerite);
-      }
-
-      &__monthly {
-        color: var(--color-BlueMarguerite);
+        &:hover {
+          cursor: pointer;
+          color: var(--color-PureWhite);
+        }
       }
     }
   }
   &__miniCard {
-    overflow: hidden;
     border-radius: 15px;
-    position: relative;
-
-    &__logo {
-      padding-bottom: 9rem;
-      overflow: hidden;
-      width: 100%;
-      position: relative;
-      border-radius: 15px 15px 0 0;
-      &__icon {
-        position: absolute;
-        top: -10px;
-        right: 10px;
-        width: 79px;
-        height: 79px;
-      }
+    padding-top: 4.5rem;
+    background-repeat: no-repeat;
+    background-position: top -0.9rem right 5%;
+    height: 100%;
+    transition: padding 0.3s ease;
+    &:hover {
+      padding-top: 2.7rem;
     }
-    &__card {
-      position: absolute;
-      top: 5rem;
+    &.work {
+      background-color: var(--color-Salmon);
+      background-image: url(/public/icon-work.svg);
+    }
+    &.play {
+      background-color: var(--color-PictonBlue);
+      background-image: url(/public/icon-play.svg);
+    }
+    &.study {
+      background-color: var(--color-WildWatermelon);
+      background-image: url(/public/icon-study.svg);
+    }
+    &.exercice {
+      background-color: var(--color-Emerald);
+      background-image: url(/public/icon-exercise.svg);
+    }
+    &.social {
+      background-color: var(--color-PurpleHeart2);
+      background-image: url(/public/icon-social.svg);
+    }
+    &.self-care {
+      background-color: var(--color-CreamCan);
+      background-image: url(/public/icon-self-care.svg);
+    }
+
+    &__container {
       background-color: var(--color-HeathersDupe);
       border-radius: 15px;
+      transform: translateY(1px);
+      padding: 2.7rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.8rem;
 
-      &__title {
-        min-width: 25.5rem;
+      &__header {
         display: flex;
-        align-items: center;
         justify-content: space-between;
-        max-width: 19rem;
-        padding: 2.9rem 3.5rem 2.4rem 3rem;
+        align-items: center;
+        &__title {
+          font-size: 1.8rem;
+          font-weight: 500;
+          color: var(--color-PureWhite);
+        }
+        & img {
+          padding: 0.9rem 0;
+          width: 2.7rem;
+        }
       }
-      &__hours {
-        padding-left: 3rem;
-      }
-      &__lastWeek {
-        color: var(--color-LightLavy);
-        font-size: 1.5rem;
-        font-weight: 400;
-        padding: 0 3rem 4rem 3rem;
+      &__info {
+        flex-direction: column;
+        align-items: flex-start;
+        // justify-content: space-between;
+        // align-items: center;
+        &__hours {
+          color: var(--color-PureWhite);
+          font-size: 4.5rem;
+          font-weight: 300;
+        }
+        &__prev__hours {
+        }
       }
     }
   }
+
+  // &__miniCard {
+  //   overflow: hidden;
+  //   border-radius: 15px;
+  //   position: relative;
+
+  //   &__logo {
+  //     padding-bottom: 9rem;
+  //     overflow: hidden;
+  //     width: 100%;
+  //     position: relative;
+  //     border-radius: 15px 15px 0 0;
+  //     &__icon {
+  //       position: absolute;
+  //       top: -10px;
+  //       right: 10px;
+  //       width: 79px;
+  //       height: 79px;
+  //     }
+  //   }
+  //   &__card {
+  //     position: absolute;
+  //     top: 5rem;
+  //     background-color: var(--color-HeathersDupe);
+  //     border-radius: 15px;
+
+  //     &__title {
+  //       min-width: 25.5rem;
+  //       display: flex;
+  //       align-items: center;
+  //       justify-content: space-between;
+  //       max-width: 19rem;
+  //       padding: 2.9rem 3.5rem 2.4rem 3rem;
+  //     }
+  //     &__hours {
+  //       padding-left: 3rem;
+  //     }
+  //     &__lastWeek {
+  //       color: var(--color-LightLavy);
+  //       font-size: 1.5rem;
+  //       font-weight: 400;
+  //       padding: 0 3rem 4rem 3rem;
+  //     }
+  //   }
+  // }
 }

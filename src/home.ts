@@ -47,10 +47,10 @@ function updateDashboard(data: Activity[], timeframe: Timeframe) {
   }
 
   const currentHours = document.querySelectorAll<HTMLHeadingElement>(
-    ".dashboard__miniCard__card__hours"
+    ".dashboard__miniCard__container__info__hours"
   );
   const previousHours = document.querySelectorAll<HTMLHeadingElement>(
-    ".dashboard__miniCard__card__lastWeek"
+    ".dashboard__miniCard__container__info__prev__hours"
   );
 
   currentHours.forEach((current) => {
@@ -91,35 +91,48 @@ function getTimeframeText(timeframe: Timeframe): string {
 }
 
 // Set timeframe function
-function setTimeframe(timeframe: Timeframe) {
+function setTimeframe(timeframe: Timeframe, clickedButton: HTMLElement) {
   currentTimeframe = timeframe;
   updateDashboard(activityData, currentTimeframe);
+  updateActiveButton(clickedButton);
+}
+
+// Apply dynamic styling to cliked links
+function updateActiveButton(clickedLink: HTMLElement) {
+  const buttons = document.querySelectorAll<HTMLElement>(
+    '[id^="daily"], [id^="weekly"], [id^="monthly"]'
+  );
+  buttons.forEach((button) => {
+    button.classList.remove("color-white");
+  });
+  clickedLink.classList.add("color-white");
 }
 
 // Display error function
 function displayError(message: string) {
-  const errorElement = document.getElementById("error");
-  if (errorElement) {
-    errorElement.textContent = message;
-    errorElement.style.display = "block";
-  }
+  alert("Error : " + message);
 }
 
 // Main execution
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     activityData = await fetchData();
-    console.log(activityData);
     updateDashboard(activityData, currentTimeframe);
 
-    const timeframeButtons = document.querySelectorAll<HTMLElement>(
+    const timeframeLinks = document.querySelectorAll<HTMLElement>(
       '[id^="daily"], [id^="weekly"], [id^="monthly"]'
     );
-    timeframeButtons.forEach((button) => {
-      button.addEventListener("click", () =>
-        setTimeframe(button.id as Timeframe)
+    timeframeLinks.forEach((link) => {
+      link.addEventListener("click", () =>
+        setTimeframe(link.id as Timeframe, link)
       );
     });
+
+    //Apply activ link default styling
+    const weeklyButton = document.getElementById("weekly");
+    if (weeklyButton) {
+      updateActiveButton(weeklyButton);
+    }
   } catch (error) {
     displayError("Failed to load data");
   }

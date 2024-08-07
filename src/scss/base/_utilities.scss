@@ -13,14 +13,24 @@
   margin: 0 auto;
 }
 .grid {
+  max-width: 111.1rem;
+  width: 100%;
   margin: 25.3rem 16.5rem;
   display: grid;
-  grid-template-columns: repeat(4, 25.5rem);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr 1fr;
   gap: 3rem;
 
   &__item1 {
     grid-row: 1/-1;
+  }
+  @include respond(dashboard-break) {
+    max-width: 50rem;
+    grid-template-columns: repeat(2, max(25.5rem));
+  }
+  @include respond(phone) {
+    max-width: 30rem;
+    grid-template-columns: 1fr;
   }
 }
 .hidden {
@@ -32,6 +42,9 @@
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+.color-white {
+  color: var(--color-PureWhite) !important;
 }
 .color-salmon {
   background-color: var(--color-Salmon);
