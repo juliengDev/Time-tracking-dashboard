@@ -15,7 +15,7 @@
 .grid {
   max-width: 111.1rem;
   width: 100%;
-  margin: 25.3rem 16.5rem;
+  margin: 25.3rem 16.5rem 3rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr 1fr;
@@ -23,6 +23,7 @@
 
   &__item1 {
     grid-row: 1/-1;
+    max-height: 51.8rem;
   }
   @include respond(dashboard-break) {
     max-width: 50rem;

@@ -125,7 +125,7 @@ body {
 .grid {
   max-width: 111.1rem;
   width: 100%;
-  margin: 25.3rem 16.5rem;
+  margin: 25.3rem 16.5rem 3rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr 1fr;
@@ -133,6 +133,7 @@ body {
 }
 .grid__item1 {
   grid-row: 1/-1;
+  max-height: 51.8rem;
 }
 @media only screen and (max-width: 65.625em) {
   .grid {
@@ -190,11 +191,11 @@ body {
   margin: 1.6rem 0 6rem;
   font-size: 1.1rem;
   text-align: center;
-  color: var(--color-wenge-brown);
+  color: var(--color-PureWhite);
 }
 .attribution__credit {
   font-weight: 800;
-  color: var(--color-dark-raspberry) !important;
+  color: var(--color-WildWatermelon) !important;
 }
 
 .dashboard__card {
@@ -203,6 +204,7 @@ body {
   border-radius: 15px;
 }
 .dashboard__card__profil {
+  max-height: 35.4rem;
   background-color: var(--color-RoyalBlue);
   border-radius: 0 0 15px 15px;
 }
@@ -230,6 +232,11 @@ body {
   padding: 2.6rem 15.5rem 3.2rem 3.2rem;
   gap: 2.1rem;
   border-radius: 0 0 15px 15px;
+}
+@media only screen and (max-width: 37.5em) {
+  .dashboard__card__calendar {
+    flex-direction: row;
+  }
 }
 .dashboard__card__calendar__item {
   transition: all 0.3s ease;
@@ -307,8 +314,15 @@ body {
 }
 .dashboard__miniCard__container__info__hours {
   color: var(--color-PureWhite);
-  font-size: 4.5rem;
+  font-size: 5.6rem;
   font-weight: 300;
+  line-height: 1;
+  padding-bottom: 0.8rem;
+}
+.dashboard__miniCard__container__info__prev__hours {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-LightLavy);
 }
 
 /*# sourceMappingURL=style.css.map */

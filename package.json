@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npm run build:sass && tsc && vite build",
     "deploy": "gh-pages -d dist",
     "watch:ts": "tsc -w",
     "preview": "vite preview",
